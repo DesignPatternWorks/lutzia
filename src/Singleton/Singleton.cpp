@@ -22,14 +22,13 @@
  * SOFTWARE.
  * *****************************************************************************/
 
-#include "FactoryMethod/Creator.h"
-#include "FactoryMethod/Product.h"
-#include "FactoryMethod/ConcreteCreator.h"
-#include "FactoryMethod/ConcreteProduct.h"
+#include "Singleton.h"
 
-#include "Singleton/Singleton.h"
+Singleton* Singleton::m_Singleton = 0;
 
-extern "C"
+Singleton* Singleton::Instance()
 {
+    if(!m_Singleton) m_Singleton = new Singleton;
 
+    return m_Singleton;
 }

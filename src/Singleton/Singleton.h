@@ -22,14 +22,20 @@
  * SOFTWARE.
  * *****************************************************************************/
 
-#include "FactoryMethod/Creator.h"
-#include "FactoryMethod/Product.h"
-#include "FactoryMethod/ConcreteCreator.h"
-#include "FactoryMethod/ConcreteProduct.h"
+#ifndef SINGLETON_H
+#define SINGLETON_H
 
-#include "Singleton/Singleton.h"
-
-extern "C"
+class Singleton
 {
+public:
+    virtual ~Singleton() {}
+    static Singleton* Instance();
 
-}
+protected:
+    Singleton() {}
+
+private:
+    static Singleton* m_Singleton;
+};
+
+#endif // SINGLETON_H
